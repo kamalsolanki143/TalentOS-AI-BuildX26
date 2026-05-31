@@ -1,22 +1,25 @@
 import Navbar from "@/components/Navbar";
-import JobForm from "@/components/JobForm";
+import CandidateForm from "@/components/CandidateForm";
 
-export default function JobsPage() {
+export default function ApplyPage() {
   return (
     <>
       <Navbar />
 
       <main className="min-h-screen bg-zinc-50 dark:bg-black p-8">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl font-bold text-black dark:text-white mb-2">
-            Jobs
-          </h1>
+        <div className="max-w-4xl mx-auto">
+          
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold text-black dark:text-white">
+              Frontend Developer
+            </h1>
 
-          <p className="text-zinc-500 dark:text-zinc-400 mb-8">
-            Create and manage job postings.
-          </p>
+            <p className="mt-2 text-zinc-500 dark:text-zinc-400">
+              TalentOS • Remote • Internship
+            </p>
+          </div>
 
-          <JobForm />
+          <CandidateForm />
         </div>
       </main>
     </>
