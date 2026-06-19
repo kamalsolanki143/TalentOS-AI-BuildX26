@@ -141,3 +141,8 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Custom rules
+.DS_Store
+*.pem
+next-env.d.ts
