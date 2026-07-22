@@ -1,5 +1,5 @@
 -- ============================================================
--- TalentOS — Supabase Schema
+-- TalentOS — Supabase Schema (v2 — Mentor Feedback Update)
 -- Run this in your Supabase SQL Editor (Dashboard → SQL Editor)
 -- ============================================================
 
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS jobs (
 
 -- ============================================================
 -- TABLE: candidates
--- Stores applicant profiles (sourced from Google Form, n8n, direct)
+-- Stores applicant profiles (sourced from Google Form, automation, direct)
 -- ============================================================
 CREATE TABLE IF NOT EXISTS candidates (
   id               UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -35,13 +35,13 @@ CREATE TABLE IF NOT EXISTS candidates (
   experience       TEXT,
   availability     TEXT,
   expected_stipend TEXT,
-  source           TEXT        DEFAULT 'direct', -- 'google_form' | 'direct' | 'n8n'
+  source           TEXT        DEFAULT 'direct', -- 'google_form' | 'direct' | 'n8n' | 'automation'
   created_at       TIMESTAMPTZ DEFAULT now()
 );
 
 -- ============================================================
 -- TABLE: responses
--- Stores WhatsApp / screening Q&A pairs from n8n automation
+-- Stores screening Q&A pairs from automation (Make.com / n8n)
 -- ============================================================
 CREATE TABLE IF NOT EXISTS responses (
   id           UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -53,7 +53,20 @@ CREATE TABLE IF NOT EXISTS responses (
 
 -- ============================================================
 -- TABLE: scores
--- Stores AI scoring results per candidate per job
+-- Stores AI scoring results per candidate per job.
+--
+-- MENTOR FEEDBACK (Explainable AI):
+--   score_breakdown (JSONB) stores per-dimension reasons so the
+--   dashboard can show WHY a candidate scored 89/100, not just the number.
+--
+--   Structure:
+--   {
+--     "skill_fit":         { "score": 85, "reasons": ["Python matched", "React matched"] },
+--     "communication_fit": { "score": 70, "reasons": ["Clear responses", "Missing portfolio"] },
+--     "startup_fit":       { "score": 90, "reasons": ["Prefers fast-paced", "Has startup exp"] },
+--     "availability_fit":  { "score": 100, "reasons": ["Can join immediately"] },
+--     "salary_fit":        { "score": 80, "reasons": ["Expected ₹18k, budget ₹20k"] }
+--   }
 -- ============================================================
 CREATE TABLE IF NOT EXISTS scores (
   id                  UUID    PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -66,6 +79,7 @@ CREATE TABLE IF NOT EXISTS scores (
   salary_fit          INTEGER CHECK (salary_fit BETWEEN 0 AND 100),
   overall_score       INTEGER CHECK (overall_score BETWEEN 0 AND 100),
   summary             TEXT,                -- AI-generated brief (1–3 sentences)
+  score_breakdown     JSONB,               -- Explainable AI: per-dimension reasons
   ranked_position     INTEGER,             -- Nullable; assigned after ranking pass
   created_at          TIMESTAMPTZ DEFAULT now(),
 
@@ -74,26 +88,32 @@ CREATE TABLE IF NOT EXISTS scores (
 );
 
 -- ============================================================
+-- MIGRATION: Add score_breakdown to existing scores table
+-- Run this if the table already exists from a previous deployment
+-- ============================================================
+ALTER TABLE scores
+  ADD COLUMN IF NOT EXISTS score_breakdown JSONB;
+
+-- ============================================================
 -- INDEXES — speed up common queries
 -- ============================================================
 CREATE INDEX IF NOT EXISTS idx_candidates_job_id   ON candidates(job_id);
 CREATE INDEX IF NOT EXISTS idx_responses_candidate  ON responses(candidate_id);
 CREATE INDEX IF NOT EXISTS idx_scores_job_id        ON scores(job_id);
 CREATE INDEX IF NOT EXISTS idx_scores_overall       ON scores(job_id, overall_score DESC);
+-- GIN index for fast JSONB queries on score_breakdown
+CREATE INDEX IF NOT EXISTS idx_scores_breakdown     ON scores USING GIN (score_breakdown);
 
 -- ============================================================
 -- ROW LEVEL SECURITY (RLS)
--- All tables are locked by default; service role bypasses RLS
--- automatically, so these policies are for future anon/auth use.
+-- All tables locked by default; service role bypasses RLS automatically.
 -- ============================================================
-
 ALTER TABLE jobs        ENABLE ROW LEVEL SECURITY;
 ALTER TABLE candidates  ENABLE ROW LEVEL SECURITY;
 ALTER TABLE responses   ENABLE ROW LEVEL SECURITY;
 ALTER TABLE scores      ENABLE ROW LEVEL SECURITY;
 
--- Allow full access for all operations (service role key used from backend).
--- Tighten these policies once auth is added.
+-- Full access policies (tighten after auth is added)
 CREATE POLICY "allow_all_jobs"        ON jobs        FOR ALL USING (true) WITH CHECK (true);
 CREATE POLICY "allow_all_candidates"  ON candidates  FOR ALL USING (true) WITH CHECK (true);
 CREATE POLICY "allow_all_responses"   ON responses   FOR ALL USING (true) WITH CHECK (true);
@@ -101,11 +121,5 @@ CREATE POLICY "allow_all_scores"      ON scores      FOR ALL USING (true) WITH C
 
 -- ============================================================
 -- STORAGE BUCKET: resumes
--- Create via Supabase Dashboard → Storage, or uncomment below
--- if using the management API via service role.
--- NOTE: Storage bucket creation is not supported in plain SQL;
---       run this separately via Supabase JS admin client or Dashboard.
+-- Create via Supabase Dashboard → Storage → New bucket "resumes" (Public ON)
 -- ============================================================
--- INSERT INTO storage.buckets (id, name, public)
---   VALUES ('resumes', 'resumes', true)
---   ON CONFLICT (id) DO NOTHING;
