@@ -133,6 +133,7 @@ export async function POST(req: Request) {
             salary_fit: aiResult.salary_fit,
             overall_score: overallScore,
             summary: aiResult.summary,
+            score_breakdown: aiResult.score_breakdown ?? null, // Explainable AI
           },
           { onConflict: 'candidate_id,job_id' }
         )

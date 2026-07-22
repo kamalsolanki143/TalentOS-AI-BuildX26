@@ -81,6 +81,8 @@ export async function POST(req: Request) {
     aiResult.overall_score ?? computeOverallScore(aiResult);
 
   // ── 6. Upsert score into Supabase ────────────────────────
+  // score_breakdown is the Explainable AI payload (mentor requirement):
+  // tells the dashboard WHY a candidate got 89/100, not just the number.
   const { data: scoreData, error: scoreError } = await supabaseAdmin
     .from('scores')
     .upsert(
@@ -94,6 +96,7 @@ export async function POST(req: Request) {
         salary_fit: aiResult.salary_fit,
         overall_score: overallScore,
         summary: aiResult.summary,
+        score_breakdown: aiResult.score_breakdown ?? null,
       },
       { onConflict: 'candidate_id,job_id' } // update if already scored
     )
