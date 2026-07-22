@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+openai
+gspread
+google-auth
+resend
+python-dotenv
+pydantic
