@@ -12,6 +12,7 @@ export default function Navbar() {
         <Link href="/dashboard">Dashboard</Link>
         <Link href="/dashboard/jobs">Jobs</Link>
         <Link href="/dashboard/candidates">Candidates</Link>
+        <Link href="/ai-transparency">AI Transparency</Link>
 
         <button className="bg-black text-white px-4 py-2 rounded-lg text-sm">
           Get Started
