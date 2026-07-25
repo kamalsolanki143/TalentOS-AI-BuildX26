@@ -1,10 +1,14 @@
 import ScoreBadge from "./ScoreBadge";
+import ScoreExplainer from "./ScoreExplainer";
+import type { ScoreBreakdown } from "@/types";
 
 type CandidateCardProps = {
   name: string;
   role: string;
   score: number;
   status: string;
+  summary?: string | null;
+  scoreBreakdown?: ScoreBreakdown | null;
 };
 
 export default function CandidateCard({
@@ -12,6 +16,8 @@ export default function CandidateCard({
   role,
   score,
   status,
+  summary,
+  scoreBreakdown,
 }: CandidateCardProps) {
   return (
     <div className="bg-white dark:bg-zinc-900 rounded-2xl p-6 border shadow-sm">
@@ -30,6 +36,15 @@ export default function CandidateCard({
           {status}
         </span>
       </div>
+
+      {/* Explainable AI section */}
+      {scoreBreakdown && (
+        <ScoreExplainer
+          scoreBreakdown={scoreBreakdown}
+          summary={summary}
+          overallScore={score}
+        />
+      )}
     </div>
   );
 }
