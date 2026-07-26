@@ -440,22 +440,69 @@ TalentOS is designed with the following objectives:
 
 # 📸 Application Gallery
 
-| Landing Page | Dashboard |
-|--------------|-----------|
-| ![](assets/screenshots/landing-page.png) | ![](assets/screenshots/dashboard.png) |
+# 📸 Platform Preview
 
-| Jobs | Candidates |
-|------|------------|
-| ![](assets/screenshots/jobs.png) | ![](assets/screenshots/candidates.png) |
+## 🌐 Landing Page
 
-| AI Transparency | Login |
-|-----------------|-------|
-| ![](assets/screenshots/ai-transparency.png) | ![](assets/screenshots/login.png) |
+<p align="center">
+<img src="assets/screenshots/landing-page.png" width="100%"/>
+</p>
 
-| Profile | Settings |
-|---------|----------|
-| ![](assets/screenshots/profile.png) | ![](assets/screenshots/settings.png) |
+---
 
+## 🔐 Demo Login
+
+<p align="center">
+<img src="assets/screenshots/login.png" width="100%"/>
+</p>
+
+---
+
+## 📊 Founder Dashboard
+
+<p align="center">
+<img src="assets/screenshots/dashboard.png" width="100%"/>
+</p>
+
+---
+
+## 💼 Jobs & Openings
+
+<p align="center">
+<img src="assets/screenshots/jobs.png" width="100%"/>
+</p>
+
+---
+
+## 👥 Candidate Intelligence Hub
+
+<p align="center">
+<img src="assets/screenshots/candidates.png" width="100%"/>
+</p>
+
+---
+
+## 🛡️ Explainable AI & Transparency
+
+<p align="center">
+<img src="assets/screenshots/ai-transparency.png" width="100%"/>
+</p>
+
+---
+
+## 👤 Founder Profile
+
+<p align="center">
+<img src="assets/screenshots/profile.png" width="100%"/>
+</p>
+
+---
+
+## ⚙️ Workspace Settings
+
+<p align="center">
+<img src="assets/screenshots/settings.png" width="100%"/>
+</p>
 ---
 
 # 🚀 Project Highlights
