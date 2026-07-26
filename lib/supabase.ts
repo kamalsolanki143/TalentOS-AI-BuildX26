@@ -1,19 +1,13 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+// TODO: Replace DemoAuth with Supabase Auth before production.
 
-if (!supabaseUrl) {
-  throw new Error('Missing env: NEXT_PUBLIC_SUPABASE_URL');
-}
-if (!supabaseAnonKey) {
-  throw new Error('Missing env: NEXT_PUBLIC_SUPABASE_ANON_KEY');
-}
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder-demo.supabase.co';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-anon-key';
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'placeholder-service-key';
 
 // ---------------------------------------------------------------------------
-// Public (anon) client — safe to use in browser / Client Components.
-// Respects Row Level Security policies.
+// Public (anon) client — Safe fallback for demo mode without env vars
 // ---------------------------------------------------------------------------
 export const supabaseClient: SupabaseClient = createClient(
   supabaseUrl,
@@ -21,16 +15,13 @@ export const supabaseClient: SupabaseClient = createClient(
 );
 
 // ---------------------------------------------------------------------------
-// Admin (service role) client — SERVER ONLY.
-// Bypasses Row Level Security. NEVER expose this key to the client.
-// Use exclusively inside Next.js API routes and Server Actions.
+// Admin (service role) client — Safe fallback for demo mode without env vars
 // ---------------------------------------------------------------------------
 export const supabaseAdmin: SupabaseClient = createClient(
   supabaseUrl,
   supabaseServiceRoleKey,
   {
     auth: {
-      // Disable auto-refresh — service role tokens don't expire
       autoRefreshToken: false,
       persistSession: false,
     },

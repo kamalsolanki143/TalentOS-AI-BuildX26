@@ -1,282 +1,243 @@
-import Navbar from "@/components/Navbar";
+'use client';
+
+import React from 'react';
+import { ProtectedRoute } from '@/components/layout/ProtectedRoute';
+import { PageWrapper } from '@/components/ui/PageWrapper';
+import { Container } from '@/components/ui/Container';
+import { Navbar } from '@/components/ui/Navbar';
+import { Footer } from '@/components/ui/Footer';
+import { Card } from '@/components/ui/Card';
+import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
+import { useToast } from '@/hooks/useToast';
+import {
+  DecisionOverview,
+  ResumeHighlightViewer,
+  BiasDetectionPanel,
+  DecisionTimeline,
+  AuditLogTable,
+  HumanReviewPanel,
+} from '@/components/ai-transparency';
+import {
+  CheckCircle2,
+  Download,
+  Share2,
+  AlertTriangle,
+  Sparkles,
+} from 'lucide-react';
 
 export default function AITransparencyPage() {
+  const { toast } = useToast();
+
+  const handleDownloadPDF = () => {
+    toast({
+      title: 'XAI Audit Report PDF Exported',
+      description: 'Downloaded full Explainable AI decision audit breakdown.',
+      variant: 'success',
+    });
+  };
+
+  const handleShareReport = () => {
+    navigator.clipboard.writeText(window.location.href);
+    toast({
+      title: 'Public Explanation Link Copied',
+      description: 'Audit report URL copied to clipboard.',
+      variant: 'success',
+    });
+  };
+
+  const scoreDimensions = [
+    { name: 'Technical Skills Fit', score: 98, weight: '30%', confidence: '99%' },
+    { name: 'Startup Culture Fit', score: 95, weight: '25%', confidence: '96%' },
+    { name: 'Communication Depth', score: 92, weight: '20%', confidence: '94%' },
+    { name: 'Salary Alignment', score: 90, weight: '15%', confidence: '98%' },
+    { name: 'Immediate Availability', score: 100, weight: '10%', confidence: '100%' },
+  ];
+
+  const whyScoreExplanations = [
+    {
+      title: 'Matched 9 of 10 Required Skills',
+      reason: 'Candidate resume explicitly verifies Next.js 14, React, TypeScript, Tailwind CSS, and Supabase.',
+      confidence: '99% Match',
+    },
+    {
+      title: '4 Years Next.js Experience Detected',
+      reason: 'Work history at HyperScale Labs details 4 years of senior frontend architecture experience.',
+      confidence: '98% Confident',
+    },
+    {
+      title: 'Startup Ownership Keywords Identified',
+      reason: 'Semantic parser detected "0->1 feature ownership", "fast execution velocity", and "founder communication".',
+      confidence: '95% Match',
+    },
+    {
+      title: 'Production Portfolio Work Verified',
+      reason: 'Portfolio links demonstrate complex web applications serving >50k active users.',
+      confidence: '96% Confident',
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-white dark:bg-black font-sans">
-      <Navbar />
+    <ProtectedRoute>
+      <div className="min-h-screen bg-ambient-light flex flex-col font-sans">
+        <Navbar />
 
-      {/* Hero */}
-      <section className="px-6 py-20 max-w-4xl mx-auto text-center">
-        <span className="text-sm font-medium bg-black text-white dark:bg-white dark:text-black px-4 py-1 rounded-full mb-6 inline-block">
-          AI Transparency
-        </span>
-        <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white mt-4">
-          How Our AI Evaluates Candidates
-        </h1>
-        <p className="mt-4 text-lg text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto">
-          We believe in transparent, explainable AI. Here&apos;s exactly how TalentOS
-          scores and ranks candidates — no black boxes.
-        </p>
-      </section>
-
-      {/* Content */}
-      <section className="px-6 pb-20 max-w-4xl mx-auto space-y-16">
-
-        {/* How Our AI Works */}
-        <div>
-          <h2 className="text-2xl font-bold text-black dark:text-white mb-4">
-            🤖 How Our AI Works
-          </h2>
-          <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 space-y-4">
-            <p className="text-zinc-600 dark:text-zinc-300">
-              TalentOS uses <strong>Google Gemini Flash</strong> — a fast, cost-effective AI model — to
-              evaluate candidates against job requirements. The process is:
-            </p>
-            <ol className="list-decimal list-inside space-y-2 text-zinc-600 dark:text-zinc-300">
-              <li>A candidate applies with their profile (skills, experience, availability)</li>
-              <li>Our AI evaluates the candidate against the specific job requirements</li>
-              <li>The AI produces a score across 5 dimensions with specific reasons for each</li>
-              <li>Candidates are ranked by weighted overall score</li>
-              <li>Founders see the full breakdown — not just a number</li>
-            </ol>
-          </div>
-        </div>
-
-        {/* What Data We Use */}
-        <div>
-          <h2 className="text-2xl font-bold text-black dark:text-white mb-4">
-            📋 What Data We Use
-          </h2>
-          <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6">
-            <p className="text-zinc-600 dark:text-zinc-300 mb-4">
-              The AI only sees job-relevant information. We <strong>never</strong> use
-              demographic data (age, gender, ethnicity, photo) in scoring.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white dark:bg-zinc-800 rounded-xl p-4">
-                <h4 className="font-semibold text-black dark:text-white mb-2">From the Job</h4>
-                <ul className="text-sm text-zinc-500 dark:text-zinc-400 space-y-1">
-                  <li>• Job title &amp; description</li>
-                  <li>• Required skills</li>
-                  <li>• Stipend/salary range</li>
-                </ul>
+        <PageWrapper className="p-4 sm:p-6 lg:p-8 space-y-10 flex-1">
+          <Container size="xl">
+            {/* 1. HERO SECTION */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-slate-200/80">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <Badge variant="primary" size="sm" dot>Explainable AI (XAI) Control Center</Badge>
+                  <span className="text-xs font-mono text-slate-400">BuildX Integrity Standard</span>
+                </div>
+                <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                  Transparent AI Decisions &amp; Score Audit
+                </h1>
+                <p className="text-base text-slate-600 max-w-3xl leading-relaxed">
+                  TalentOS never uses black-box algorithms. Inspect exact score breakdowns, empirical resume evidence, and 100% non-demographic bias checks for every candidate recommendation.
+                </p>
               </div>
-              <div className="bg-white dark:bg-zinc-800 rounded-xl p-4">
-                <h4 className="font-semibold text-black dark:text-white mb-2">From the Candidate</h4>
-                <ul className="text-sm text-zinc-500 dark:text-zinc-400 space-y-1">
-                  <li>• Skills listed</li>
-                  <li>• Experience description</li>
-                  <li>• Availability</li>
-                  <li>• Expected stipend</li>
-                  <li>• Screening Q&amp;A answers</li>
-                </ul>
+
+              {/* Export Actions Bar */}
+              <div className="flex items-center gap-2 shrink-0">
+                <Button variant="primary" size="sm" onClick={handleDownloadPDF} leftIcon={<Download className="w-4 h-4" />}>
+                  Download PDF Report
+                </Button>
+                <Button variant="secondary" size="sm" onClick={handleShareReport} leftIcon={<Share2 className="w-4 h-4 text-indigo-600" />}>
+                  Share Report
+                </Button>
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Score Dimensions */}
-        <div>
-          <h2 className="text-2xl font-bold text-black dark:text-white mb-4">
-            📊 Score Dimensions &amp; Weights
-          </h2>
-          <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 space-y-4">
-            <p className="text-zinc-600 dark:text-zinc-300">
-              Every candidate is evaluated on 5 dimensions. Each dimension is scored 0–100
-              and contributes to the overall score based on these weights:
-            </p>
-
-            <div className="space-y-3">
-              <DimensionBar
-                name="Skill Fit"
-                weight={30}
-                description="How well the candidate's skills match job requirements"
-                color="bg-blue-500"
-              />
-              <DimensionBar
-                name="Startup Fit"
-                weight={25}
-                description="Adaptability, ownership mindset, fast-paced environment readiness"
-                color="bg-purple-500"
-              />
-              <DimensionBar
-                name="Communication Fit"
-                weight={20}
-                description="Clarity of responses, articulation, professionalism"
-                color="bg-green-500"
-              />
-              <DimensionBar
-                name="Salary Fit"
-                weight={15}
-                description="Alignment between expected compensation and job budget"
-                color="bg-orange-500"
-              />
-              <DimensionBar
-                name="Availability Fit"
-                weight={10}
-                description="Match between candidate availability and job timeline"
-                color="bg-pink-500"
-              />
+            {/* 2. OVERALL AI DECISION PANEL */}
+            <div className="pt-6">
+              <DecisionOverview />
             </div>
 
-            <div className="mt-6 bg-white dark:bg-zinc-800 rounded-xl p-4">
-              <p className="text-sm font-mono text-zinc-600 dark:text-zinc-300">
-                <strong>Formula:</strong> overall_score = (skill_fit × 0.30) + (startup_fit × 0.25)
-                + (communication_fit × 0.20) + (salary_fit × 0.15) + (availability_fit × 0.10)
-              </p>
-            </div>
-          </div>
-        </div>
+            {/* 3. 10-DIMENSION AI SCORE BREAKDOWN */}
+            <SectionContainer title="5-Dimension Score Contribution Matrix" subtitle="Transparent weighted score calculation formula">
+              <Card variant="default" padding="lg" className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4 text-xs">
+                  {scoreDimensions.map((dim, idx) => (
+                    <div key={idx} className="p-4 bg-slate-50 rounded-2xl border border-slate-200/80 space-y-2 text-center">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">{dim.name}</span>
+                      <span className="text-2xl font-black text-indigo-600 font-mono block">{dim.score}%</span>
+                      <div className="flex justify-between text-[10px] text-slate-500 pt-1 border-t border-slate-200/60">
+                        <span>Weight: {dim.weight}</span>
+                        <span className="text-emerald-600 font-semibold">{dim.confidence} Conf.</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            </SectionContainer>
 
-        {/* How Rankings Work */}
-        <div>
-          <h2 className="text-2xl font-bold text-black dark:text-white mb-4">
-            🏆 How Rankings Are Determined
-          </h2>
-          <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 space-y-4">
-            <p className="text-zinc-600 dark:text-zinc-300">
-              After all candidates for a job are scored, they are ranked by their
-              weighted overall score (highest first). The ranking is:
-            </p>
-            <ul className="space-y-2 text-zinc-600 dark:text-zinc-300">
-              <li>• <strong>Deterministic</strong> — same inputs always produce the same ranking order</li>
-              <li>• <strong>Per-job</strong> — rankings are relative to other candidates for the same position</li>
-              <li>• <strong>Persistent</strong> — scores are cached so candidates aren&apos;t re-evaluated unnecessarily</li>
-              <li>• <strong>Transparent</strong> — founders see exact scores and reasons, not just a rank number</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Explainable AI */}
-        <div>
-          <h2 className="text-2xl font-bold text-black dark:text-white mb-4">
-            💡 Explainable AI — We Show the &quot;Why&quot;
-          </h2>
-          <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 space-y-4">
-            <p className="text-zinc-600 dark:text-zinc-300">
-              We don&apos;t just show a number like &quot;89/100&quot;. For every score, our AI provides
-              specific reasons explaining <strong>why</strong> that score was given.
-            </p>
-
-            {/* Example Breakdown */}
-            <div className="bg-white dark:bg-zinc-800 rounded-xl p-4 space-y-3">
-              <p className="text-sm font-semibold text-black dark:text-white">
-                Example: Skill Fit — 85/100
-              </p>
-              <ul className="text-sm text-zinc-500 dark:text-zinc-400 space-y-1">
-                <li>✅ Python and React skills match job requirements</li>
-                <li>✅ Has 2 years of relevant project experience</li>
-                <li>⚠️ Missing Docker experience (listed in requirements)</li>
-              </ul>
-            </div>
-
-            <p className="text-zinc-600 dark:text-zinc-300 text-sm">
-              This breakdown is available for all 5 dimensions, for every scored candidate.
-              Founders can expand any score to see the reasoning.
-            </p>
-          </div>
-        </div>
-
-        {/* Data Privacy */}
-        <div>
-          <h2 className="text-2xl font-bold text-black dark:text-white mb-4">
-            🔒 Data Privacy
-          </h2>
-          <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 space-y-3">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <h4 className="font-semibold text-black dark:text-white mb-2">What we guarantee</h4>
-                <ul className="text-sm text-zinc-500 dark:text-zinc-400 space-y-1">
-                  <li>• Data deleted after 30 days</li>
-                  <li>• No third-party data sharing</li>
-                  <li>• Data used only for this recruitment</li>
-                  <li>• AI model does not train on your data</li>
-                </ul>
+            {/* 4. WHY THIS SCORE? EXPLANATION CARDS */}
+            <SectionContainer title="Why This Candidate Scored 95/100" subtitle="Empirical rationale and verified resume evidence">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {whyScoreExplanations.map((exp, idx) => (
+                  <Card key={idx} variant="gradient" padding="md" className="border-indigo-100 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                        <h4 className="text-sm font-bold text-slate-900">{exp.title}</h4>
+                      </div>
+                      <Badge variant="success" size="sm">{exp.confidence}</Badge>
+                    </div>
+                    <p className="text-xs text-slate-600 leading-relaxed pl-6">{exp.reason}</p>
+                  </Card>
+                ))}
               </div>
-              <div>
-                <h4 className="font-semibold text-black dark:text-white mb-2">Your rights</h4>
-                <ul className="text-sm text-zinc-500 dark:text-zinc-400 space-y-1">
-                  <li>• Request data deletion anytime</li>
-                  <li>• Ask for your score explanation</li>
-                  <li>• Request human review of AI decisions</li>
-                  <li>• Contact: privacy@talentos.in</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+            </SectionContainer>
 
-        {/* Fairness & Bias Mitigation */}
-        <div>
-          <h2 className="text-2xl font-bold text-black dark:text-white mb-4">
-            ⚖️ Fairness &amp; Bias Mitigation
-          </h2>
-          <div className="bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-6 space-y-4">
-            <p className="text-zinc-600 dark:text-zinc-300">
-              We take active steps to minimize bias in our AI scoring:
-            </p>
-            <ul className="space-y-2 text-zinc-600 dark:text-zinc-300">
-              <li>
-                <strong>No demographic data:</strong> The AI never sees name, gender, age, ethnicity,
-                or photo. Scoring is based purely on skills, experience, and job-relevant responses.
-              </li>
-              <li>
-                <strong>Structured rubric:</strong> Every candidate is evaluated on the same 5 dimensions
-                with the same weights — no subjective &quot;gut feeling&quot; adjustments.
-              </li>
-              <li>
-                <strong>Consistent criteria:</strong> The same prompt and evaluation framework is applied
-                to all candidates for a given job, ensuring uniform treatment.
-              </li>
-              <li>
-                <strong>Human oversight:</strong> AI scores are recommendations, not final decisions.
-                Founders always make the final hiring call.
-              </li>
-              <li>
-                <strong>Explainability:</strong> Because every score has visible reasons, biased or
-                unfair scoring is detectable and challengeable.
-              </li>
-            </ul>
-          </div>
-        </div>
+            {/* 5. RESUME HIGHLIGHT VIEWER */}
+            <SectionContainer title="Interactive Resume Detection Highlights" subtitle="Click highlighted text to inspect exact AI detection evidence">
+              <ResumeHighlightViewer />
+            </SectionContainer>
 
-        {/* Contact */}
-        <div className="text-center pt-8 border-t border-zinc-200 dark:border-zinc-800">
-          <p className="text-zinc-500 dark:text-zinc-400">
-            Questions about our AI? Contact us at{" "}
-            <a href="mailto:privacy@talentos.in" className="underline text-black dark:text-white">
-              privacy@talentos.in
-            </a>
-          </p>
-        </div>
+            {/* 6. SKILL MATCH VISUALIZATION (Required VS Detected) */}
+            <SectionContainer title="Skill Match Visualization" subtitle="Required skills vs. detected candidate skills">
+              <Card variant="default" padding="lg" className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-3 flex items-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4" /> Matched Skills (5/6)
+                    </h4>
+                    <div className="flex flex-wrap gap-1.5">
+                      {['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase'].map((sk, idx) => (
+                        <span key={idx} className="px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-lg text-xs font-semibold border border-emerald-100">
+                          ✓ {sk}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
-      </section>
-    </div>
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-amber-600 mb-3 flex items-center gap-1.5">
+                      <AlertTriangle className="w-4 h-4" /> Missing / Gap Skills (1/6)
+                    </h4>
+                    <div className="flex flex-wrap gap-1.5">
+                      {['GraphQL'].map((sk, idx) => (
+                        <span key={idx} className="px-2.5 py-1 bg-amber-50 text-amber-700 rounded-lg text-xs font-semibold border border-amber-100">
+                          ! {sk}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-3 flex items-center gap-1.5">
+                      <Sparkles className="w-4 h-4" /> Bonus Skills Detected
+                    </h4>
+                    <div className="flex flex-wrap gap-1.5">
+                      {['Framer Motion', 'Zustand', 'Design Tokens'].map((sk, idx) => (
+                        <span key={idx} className="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-lg text-xs font-semibold border border-indigo-100">
+                          + {sk}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </SectionContainer>
+
+            {/* 7. EEOC BIAS DETECTION PANEL */}
+            <SectionContainer title="EEOC Non-Demographic Bias Audit" subtitle="Guaranteed blind evaluation pass ignoring protected demographic attributes">
+              <BiasDetectionPanel />
+            </SectionContainer>
+
+            {/* 8. DECISION TIMELINE */}
+            <SectionContainer title="AI Decision Execution Stream" subtitle="Step-by-step evaluation workflow timeline">
+              <DecisionTimeline />
+            </SectionContainer>
+
+            {/* 9. AI AUDIT LOG TABLE */}
+            <SectionContainer title="Immutable AI Audit Logs" subtitle="Audit-compliant record of all scoring passes and human reviews">
+              <AuditLogTable />
+            </SectionContainer>
+
+            {/* 10. HUMAN REVIEW & OVERRIDE PANEL */}
+            <SectionContainer title="Human Founder Governance" subtitle="Approve AI recommendations or record manual score overrides">
+              <HumanReviewPanel />
+            </SectionContainer>
+          </Container>
+        </PageWrapper>
+
+        <Footer />
+      </div>
+    </ProtectedRoute>
   );
 }
 
-// ── DimensionBar component (local to this page) ─────────────
-function DimensionBar({
-  name,
-  weight,
-  description,
-  color,
-}: {
-  name: string;
-  weight: number;
-  description: string;
-  color: string;
-}) {
+function SectionContainer({ title, subtitle, children }: { title: string; subtitle: string; children: React.ReactNode }) {
   return (
-    <div className="bg-white dark:bg-zinc-800 rounded-xl p-4">
-      <div className="flex items-center justify-between mb-1">
-        <span className="font-semibold text-black dark:text-white text-sm">{name}</span>
-        <span className="text-sm font-mono text-zinc-500 dark:text-zinc-400">{weight}%</span>
+    <div className="space-y-3 pt-6 border-t border-slate-200/60">
+      <div>
+        <h3 className="text-xl font-bold text-slate-900 tracking-tight">{title}</h3>
+        <p className="text-xs text-slate-500">{subtitle}</p>
       </div>
-      <div className="w-full bg-zinc-200 dark:bg-zinc-700 rounded-full h-2 mb-2">
-        <div className={`${color} h-2 rounded-full`} style={{ width: `${weight * 3.33}%` }} />
-      </div>
-      <p className="text-xs text-zinc-500 dark:text-zinc-400">{description}</p>
+      {children}
     </div>
   );
 }

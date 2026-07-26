@@ -1,24 +1,36 @@
+import React from 'react';
+import { Badge } from '@/components/ui/Badge';
+import { Sparkles, CheckCircle2, TrendingUp } from 'lucide-react';
+
 type ScoreBadgeProps = {
   score: number;
+  className?: string;
 };
 
-export default function ScoreBadge({ score }: ScoreBadgeProps) {
-  let label = "Average";
-  let color = "bg-yellow-100 text-yellow-800";
+export default function ScoreBadge({ score, className }: ScoreBadgeProps) {
+  let variant: 'success' | 'accent' | 'warning' | 'danger' = 'warning';
+  let label = 'Average Fit';
+  let icon = <TrendingUp className="w-3 h-3" />;
 
   if (score >= 90) {
-    label = "Excellent";
-    color = "bg-green-100 text-green-800";
+    label = 'Excellent Fit';
+    variant = 'success';
+    icon = <Sparkles className="w-3 h-3 text-emerald-600" />;
   } else if (score >= 75) {
-    label = "Good Fit";
-    color = "bg-blue-100 text-blue-800";
+    label = 'Strong Fit';
+    variant = 'accent';
+    icon = <CheckCircle2 className="w-3 h-3 text-blue-600" />;
+  } else if (score >= 60) {
+    label = 'Good Fit';
+    variant = 'accent';
+    icon = <CheckCircle2 className="w-3 h-3 text-blue-600" />;
   }
 
   return (
-    <span
-      className={`px-3 py-1 rounded-full text-sm font-medium ${color}`}
-    >
-      {score} • {label}
-    </span>
+    <Badge variant={variant} size="md" leftIcon={icon} className={className}>
+      <span className="font-bold">{score}/100</span>
+      <span className="opacity-40">•</span>
+      <span>{label}</span>
+    </Badge>
   );
 }
