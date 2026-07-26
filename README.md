@@ -25,7 +25,7 @@ TalentOS is an AI-powered hiring platform that transforms traditional recruitmen
   <a href="#-core-features">✨ Features</a> •
   <a href="#-technology-stack">🛠️ Tech Stack</a> •
   <a href="#-getting-started">🚀 Getting Started</a> •
-  <a href="#-meet-team-neural-ninjas">👨‍💻 Team</a>
+  <a href="👨‍💻 Meet Team Neural Ninjas">👨‍💻 Team</a>
 </p>
 ---
 
@@ -286,7 +286,7 @@ Follow the steps below to set up TalentOS on your local machine.
 ## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/TalentOS-AI-BuildX26.git
+git clone https://github.com/kamalsolanki143/TalentOS-AI-BuildX26.git
 ```
 
 Move into the project directory.
@@ -438,55 +438,23 @@ TalentOS is designed with the following objectives:
 
 ---
 
-# 📸 Application Screenshots
+# 📸 Application Gallery
 
-> **Replace the placeholders below with actual screenshots after deployment.**
+| Landing Page | Dashboard |
+|--------------|-----------|
+| ![](assets/screenshots/landing-page.png) | ![](assets/screenshots/dashboard.png) |
 
-## 🏠 Landing Page
+| Jobs | Candidates |
+|------|------------|
+| ![](assets/screenshots/jobs.png) | ![](assets/screenshots/candidates.png) |
 
-<p align="center">
-<img src="assets/screenshots/landing-page.png" width="900" alt="Landing Page"/>
-</p>
+| AI Transparency | Login |
+|-----------------|-------|
+| ![](assets/screenshots/ai-transparency.png) | ![](assets/screenshots/login.png) |
 
----
-
-## 📊 Recruiter Dashboard
-
-<p align="center">
-<img src="assets/screenshots/dashboard.png" width="900" alt="Dashboard"/>
-</p>
-
----
-
-## 💼 Job Management
-
-<p align="center">
-<img src="assets/screenshots/jobs.png" width="900" alt="Job Management"/>
-</p>
-
----
-
-## 👥 Candidate Dashboard
-
-<p align="center">
-<img src="assets/screenshots/candidates.png" width="900" alt="Candidate Dashboard"/>
-</p>
-
----
-
-## 🤖 AI Candidate Analysis
-
-<p align="center">
-<img src="assets/screenshots/ai-score.png" width="900" alt="AI Analysis"/>
-</p>
-
----
-
-## 💡 Explainable AI
-
-<p align="center">
-<img src="assets/screenshots/ai-transparency.png" width="900" alt="Explainable AI"/>
-</p>
+| Profile | Settings |
+|---------|----------|
+| ![](assets/screenshots/profile.png) | ![](assets/screenshots/settings.png) |
 
 ---
 
