@@ -445,7 +445,7 @@ TalentOS is designed with the following objectives:
 ## 🌐 Landing Page
 
 <p align="center">
-<img src="assets/screenshots/landing-page.png" width="100%"/>
+<img src="assets/screenshot/landing-page.png" width="100%"/>
 </p>
 
 ---
@@ -453,7 +453,7 @@ TalentOS is designed with the following objectives:
 ## 🔐 Demo Login
 
 <p align="center">
-<img src="assets/screenshots/login.png" width="100%"/>
+<img src="assets/screenshot/login.png" width="100%"/>
 </p>
 
 ---
@@ -461,7 +461,7 @@ TalentOS is designed with the following objectives:
 ## 📊 Founder Dashboard
 
 <p align="center">
-<img src="assets/screenshots/dashboard.png" width="100%"/>
+<img src="assets/screenshot/dashboard.png" width="100%"/>
 </p>
 
 ---
@@ -469,7 +469,7 @@ TalentOS is designed with the following objectives:
 ## 💼 Jobs & Openings
 
 <p align="center">
-<img src="assets/screenshots/jobs.png" width="100%"/>
+<img src="assets/screenshot/jobs.png" width="100%"/>
 </p>
 
 ---
@@ -477,7 +477,7 @@ TalentOS is designed with the following objectives:
 ## 👥 Candidate Intelligence Hub
 
 <p align="center">
-<img src="assets/screenshots/candidates.png" width="100%"/>
+<img src="assets/screenshot/candidates.png" width="100%"/>
 </p>
 
 ---
@@ -485,7 +485,7 @@ TalentOS is designed with the following objectives:
 ## 🛡️ Explainable AI & Transparency
 
 <p align="center">
-<img src="assets/screenshots/ai-transparency.png" width="100%"/>
+<img src="assets/screenshot/ai-transparency.png" width="100%"/>
 </p>
 
 ---
@@ -493,7 +493,7 @@ TalentOS is designed with the following objectives:
 ## 👤 Founder Profile
 
 <p align="center">
-<img src="assets/screenshots/profile.png" width="100%"/>
+<img src="assets/screenshot/profile.png" width="100%"/>
 </p>
 
 ---
@@ -501,7 +501,7 @@ TalentOS is designed with the following objectives:
 ## ⚙️ Workspace Settings
 
 <p align="center">
-<img src="assets/screenshots/settings.png" width="100%"/>
+<img src="assets/screenshot/settings.png" width="100%"/>
 </p>
 ---
 
