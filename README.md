@@ -21,7 +21,7 @@ TalentOS is an AI-powered hiring platform that transforms traditional recruitmen
 </p>
 
 <p align="center">
-  <a href="YOUR_LIVE_DEMO_URL">🌐 Live Demo</a> •
+  <a href="https://talentos-ai-buildx26.onrender.com/">🌐 Live Demo</a> •
   <a href="#-core-features">✨ Features</a> •
   <a href="#-technology-stack">🛠️ Tech Stack</a> •
   <a href="#-getting-started">🚀 Getting Started</a> •
