@@ -1,21 +1,39 @@
 <div align="center">
 
 # 🚀 TalentOS
-### AI Hiring Co-Pilot for Startups
 
-*Hire Smarter • Hire Faster • Hire Transparently*
+### AI Hiring Co-Pilot for Modern Startups
 
-Built with **Next.js • React • TypeScript • Supabase • Google Gemini AI • Make.com**
+> **Hire Smarter • Hire Faster • Hire Transparently**
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)]()
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)]()
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)]()
-[![Supabase](https://img.shields.io/badge/Supabase-Backend-3ECF8E?logo=supabase)]()
-[![Gemini AI](https://img.shields.io/badge/Google-Gemini-blueviolet)]()
+TalentOS is an AI-powered hiring platform that transforms traditional recruitment using **Explainable AI**, **semantic resume analysis**, and **intelligent candidate management**.
 
+<p align="center">
+
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase)
+![Google Gemini](https://img.shields.io/badge/Google-Gemini-4285F4?style=for-the-badge&logo=google)
+![BuildX'26](https://img.shields.io/badge/BuildX'26-Hackathon-blueviolet?style=for-the-badge)
+
+</p>
+
+<p align="center">
+  <a href="YOUR_LIVE_DEMO_URL">🌐 Live Demo</a> •
+  <a href="#-core-features">✨ Features</a> •
+  <a href="#-technology-stack">🛠️ Tech Stack</a> •
+  <a href="#-getting-started">🚀 Getting Started</a> •
+  <a href="#-meet-team-neural-ninjas">👨‍💻 Team</a>
+</p>
 ---
 
 ### 🏆 BuildX'26 Hackathon Project
+
+**Team Name:** Neural Ninjas
+
+*Building the future of AI-powered recruitment.*
 
 </div>
 
@@ -23,123 +41,273 @@ Built with **Next.js • React • TypeScript • Supabase • Google Gemini AI 
 
 # 📖 About TalentOS
 
-TalentOS is an AI-powered hiring platform designed to simplify recruitment for startups and growing companies.
+TalentOS is an AI-powered hiring platform developed during **BuildX'26** to simplify recruitment for startups and growing businesses.
 
-Instead of manually reviewing hundreds of resumes, recruiters can leverage AI to analyze candidates, rank applicants intelligently, generate interview questions, and understand hiring decisions through Explainable AI.
+Recruitment today is often slow, repetitive, and heavily dependent on keyword-based Applicant Tracking Systems (ATS). These traditional systems struggle to understand real candidate potential, leading to inefficient hiring decisions and missed opportunities.
 
-Our goal is to make recruitment **faster, smarter, and more transparent.**
+TalentOS solves these challenges by combining **Google Gemini AI**, **semantic resume analysis**, **Explainable AI**, and **workflow automation** into a single intelligent recruitment platform.
 
----
-
-# ✨ Features
-
-- 🤖 AI Resume Analysis
-- 📊 Intelligent Candidate Ranking
-- 💡 Explainable AI Scoring
-- 📄 Job Management
-- 👥 Candidate Dashboard
-- 🎯 AI Interview Question Generator
-- ⚡ Recruitment Automation
-- 📈 Recruiter Analytics
+Instead of simply displaying candidate scores, TalentOS explains **why** a candidate is recommended, enabling recruiters to make faster, smarter, and more transparent hiring decisions.
 
 ---
 
-# 🚀 Demo
+# 🎯 Problem Statement
 
-### Live Website
+Hiring the right talent is one of the biggest challenges faced by startups.
 
-> Add your deployed Vercel URL here
+Early-stage companies receive hundreds of applications for every job opening but often lack dedicated HR teams and advanced hiring tools.
 
-```
-https://your-project.vercel.app
-```
+### Major Challenges
 
----
+- 📄 Manual Resume Screening
+- ⏳ Slow Hiring Process
+- 🔍 Keyword-Based ATS Limitations
+- 💸 High Recruitment Cost
+- ⚠️ Lack of Explainability in AI Decisions
+- 👥 Limited HR Resources
+- 📉 Poor Candidate Experience
 
-# 📸 Screenshots
-
-| Landing Page | Dashboard |
-|---------------|------------|
-| Add Screenshot | Add Screenshot |
-
-| Candidate Dashboard | AI Analysis |
-|----------------------|-------------|
-| Add Screenshot | Add Screenshot |
+These challenges increase hiring time, reduce efficiency, and make it difficult to identify the best candidates.
 
 ---
 
-# 🏗️ Tech Stack
+# 💡 Our Solution
 
-## Frontend
+TalentOS acts as an **AI Hiring Co-Pilot** that empowers recruiters throughout the recruitment journey.
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS
+The platform enables organizations to:
 
-## Backend
+- 🤖 Analyze resumes using AI
+- 📊 Rank candidates intelligently
+- 💡 Explain AI recommendations
+- 📄 Manage job openings
+- 👥 Organize candidates
+- 🎯 Generate interview questions automatically
+- ⚡ Automate repetitive recruitment workflows
 
-- Next.js API Routes
-
-## Database
-
-- Supabase
-
-## Artificial Intelligence
-
-- Google Gemini API
-
-## Automation
-
-- Make.com
-
-## Deployment
-
-- Vercel
+TalentOS is designed specifically for startups, helping them reduce manual effort while improving hiring quality.
 
 ---
 
-# 📂 Folder Structure
+# ✨ Core Features
+
+## 🤖 AI Resume Analysis
+
+Analyze resumes using Google Gemini AI with semantic understanding of:
+
+- Technical Skills
+- Work Experience
+- Projects
+- Education
+- Certifications
+- Overall Candidate Profile
+
+---
+
+## 📊 Intelligent Candidate Ranking
+
+Instead of simple keyword matching, TalentOS performs semantic analysis to identify the most relevant candidates based on overall job fit.
+
+---
+
+## 💡 Explainable AI
+
+Every AI recommendation includes transparent reasoning.
+
+Recruiters can understand:
+
+- Skill Match
+- Experience Match
+- Communication Assessment
+- Startup Fit
+- Overall Recommendation
+
+This builds trust in AI-assisted hiring.
+
+---
+
+## 📄 Smart Job Management
+
+Recruiters can
+
+- Create Jobs
+- Manage Open Positions
+- Edit Requirements
+- Track Applications
+- Organize Hiring Workflow
+
+---
+
+## 👥 Candidate Dashboard
+
+A centralized dashboard provides:
+
+- Candidate Profiles
+- Resume Details
+- AI Evaluation
+- Hiring Status
+- Candidate Ranking
+- Application Tracking
+
+---
+
+## 🎯 AI Interview Question Generator
+
+Automatically generates personalized interview questions based on:
+
+- Resume Content
+- Skills
+- Experience
+- Job Description
+
+---
+
+## ⚡ Workflow Automation
+
+Automates repetitive recruitment tasks using intelligent workflows, reducing manual effort and improving recruiter productivity.
+
+---
+
+# 🌟 Why TalentOS?
+
+| Traditional ATS | TalentOS |
+|-----------------|-----------|
+| Keyword Matching | Semantic AI Understanding |
+| Manual Resume Screening | AI Resume Analysis |
+| Black Box Decisions | Explainable AI |
+| Generic Hiring Process | Startup-Focused Workflow |
+| Limited Automation | Intelligent End-to-End Automation |
+
+---
+
+# 🏗️ System Architecture
 
 ```text
-TalentOS
+                        Recruiter
+
+                            │
+
+                            ▼
+
+                 TalentOS Dashboard
+
+                            │
+
+                            ▼
+
+                 Next.js API Routes
+
+             ┌──────────────┴──────────────┐
+             ▼                             ▼
+
+      Google Gemini AI             Supabase Database
+
+             │                             │
+
+             └──────────────┬──────────────┘
+
+                            ▼
+
+               AI Candidate Ranking Engine
+
+                            │
+
+                            ▼
+
+                 Explainable AI Evaluation
+
+                            │
+
+                            ▼
+
+               Recruiter Decision Dashboard
+```
+
+---
+
+# ⚙️ Technology Stack
+
+TalentOS is built using a modern full-stack architecture designed for scalability, performance, and developer productivity.
+
+| Layer | Technology |
+|--------|------------|
+| 🎨 Frontend | Next.js 16 |
+| ⚛️ UI Library | React 19 |
+| 💙 Language | TypeScript |
+| 🎨 Styling | Tailwind CSS |
+| ⚡ Backend | Next.js API Routes |
+| 🗄️ Database | Supabase |
+| 🤖 Artificial Intelligence | Google Gemini API |
+| 🔄 Automation | Make.com |
+| ☁️ Deployment | Vercel / Render |
+| 🔧 Version Control | Git & GitHub |
+
+---
+
+# 📂 Project Structure
+
+```text
+TalentOS/
 │
-├── app
-├── components
-├── context
-├── hooks
-├── lib
-├── public
-├── styles
-├── utils
-├── types
+├── app/
+│   ├── dashboard/
+│   ├── login/
+│   ├── signup/
+│   ├── api/
+│   └── page.tsx
+│
+├── components/
+│
+├── context/
+│
+├── hooks/
+│
+├── lib/
+│
+├── public/
+│
+├── styles/
+│
+├── utils/
+│
+├── types/
+│
 ├── package.json
+│
 └── README.md
 ```
 
 ---
 
-# ⚙️ Installation
+# 🚀 Getting Started
 
-Clone the repository
+Follow the steps below to set up TalentOS on your local machine.
+
+## 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/TalentOS-AI-BuildX26.git
 ```
 
-Go to project
+Move into the project directory.
 
 ```bash
 cd TalentOS-AI-BuildX26
 ```
 
-Install dependencies
+---
+
+## 2️⃣ Install Dependencies
 
 ```bash
 npm install
 ```
 
-Create a `.env.local`
+---
+
+## 3️⃣ Configure Environment Variables
+
+Create a `.env.local` file in the project root and add the following variables.
 
 ```env
 GEMINI_API_KEY=
@@ -151,121 +319,491 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 ```
 
-Run development server
+> ⚠️ Never commit your `.env.local` file or API keys to GitHub.
+
+---
+
+## 4️⃣ Run Development Server
 
 ```bash
 npm run dev
 ```
 
-Open
+Open your browser and visit:
 
-```
+```text
 http://localhost:3000
 ```
 
-Production
+---
+
+## 5️⃣ Production Build
+
+To build the application for production:
 
 ```bash
 npm run build
+```
 
+Run the production server:
+
+```bash
 npm start
 ```
 
 ---
 
-# 🔄 Workflow
+# 🌐 Deployment
 
-```
-Recruiter
-     │
-     ▼
-Create Job
-     │
-     ▼
-Candidate Uploads Resume
-     │
-     ▼
-Gemini AI Analysis
-     │
-     ▼
-Semantic Matching
-     │
-     ▼
-AI Candidate Score
-     │
-     ▼
+TalentOS can be deployed on platforms that support Next.js applications.
+
+### Recommended Platforms
+
+- ▲ Vercel
+- 🚀 Render
+
+Deployment requires the same environment variables used during local development.
+
+---
+
+# 🔐 Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `GEMINI_API_KEY` | Google Gemini AI API Key |
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase Project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Public Supabase Key |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase Service Role Key |
+
+---
+
+# 🔄 Application Workflow
+
+```text
+Recruiter Creates Job
+        │
+        ▼
+Candidate Applies
+        │
+        ▼
+Resume Uploaded
+        │
+        ▼
+Google Gemini AI Analysis
+        │
+        ▼
+Semantic Skill Matching
+        │
+        ▼
+AI Candidate Ranking
+        │
+        ▼
 Explainable AI
-     │
-     ▼
-Interview Questions
-     │
-     ▼
-Recruiter Dashboard
+        │
+        ▼
+Interview Questions Generated
+        │
+        ▼
+Recruiter Reviews Candidates
+        │
+        ▼
+Shortlist & Hire
 ```
 
 ---
 
-# 🌟 Why TalentOS?
+# 🔒 Security
+
+TalentOS follows standard security practices to protect application data.
+
+- Secure Authentication
+- Protected API Routes
+- Environment Variable Management
+- Role-Based Access (planned)
+- Secure Database Communication
+- Server-side API Key Protection
+
+---
+
+# 📊 Performance Goals
+
+TalentOS is designed with the following objectives:
+
+- ⚡ Fast Resume Processing
+- 🤖 Intelligent Candidate Evaluation
+- 📈 Improved Hiring Accuracy
+- 🔍 Transparent AI Decisions
+- 📱 Responsive User Interface
+- ☁️ Cloud-Ready Deployment
+
+---
+
+# 📸 Application Screenshots
+
+> **Replace the placeholders below with actual screenshots after deployment.**
+
+## 🏠 Landing Page
+
+<p align="center">
+<img src="assets/screenshots/landing-page.png" width="900" alt="Landing Page"/>
+</p>
+
+---
+
+## 📊 Recruiter Dashboard
+
+<p align="center">
+<img src="assets/screenshots/dashboard.png" width="900" alt="Dashboard"/>
+</p>
+
+---
+
+## 💼 Job Management
+
+<p align="center">
+<img src="assets/screenshots/jobs.png" width="900" alt="Job Management"/>
+</p>
+
+---
+
+## 👥 Candidate Dashboard
+
+<p align="center">
+<img src="assets/screenshots/candidates.png" width="900" alt="Candidate Dashboard"/>
+</p>
+
+---
+
+## 🤖 AI Candidate Analysis
+
+<p align="center">
+<img src="assets/screenshots/ai-score.png" width="900" alt="AI Analysis"/>
+</p>
+
+---
+
+## 💡 Explainable AI
+
+<p align="center">
+<img src="assets/screenshots/ai-transparency.png" width="900" alt="Explainable AI"/>
+</p>
+
+---
+
+# 🚀 Project Highlights
+
+✨ TalentOS combines Artificial Intelligence and automation to simplify recruitment.
+
+### Key Highlights
+
+- 🤖 AI Resume Screening
+- 💡 Explainable AI Recommendations
+- 📊 Intelligent Candidate Ranking
+- 🎯 AI Interview Question Generation
+- 📄 Smart Job Management
+- 👥 Centralized Candidate Dashboard
+- ⚡ Automated Recruitment Workflow
+- ☁️ Cloud Deployment Ready
+- 📱 Fully Responsive User Interface
+- 🔒 Secure Authentication
+
+---
+
+# 🎯 Target Users
+
+TalentOS is designed for organizations that need a modern recruitment solution.
+
+### Primary Users
+
+- 🚀 Startup Founders
+- 👨‍💼 Recruiters
+- 🏢 HR Teams
+- 💼 Small & Medium Businesses
+- 🌍 Growing Technology Companies
+
+---
+
+# 🌟 Why Choose TalentOS?
+
+Traditional recruitment platforms focus primarily on storing resumes.
+
+TalentOS goes beyond resume storage by providing intelligent insights that assist recruiters in making better hiring decisions.
+
+## Comparison
 
 | Traditional ATS | TalentOS |
 |-----------------|-----------|
-| Keyword Matching | Semantic AI |
-| Manual Screening | AI Resume Analysis |
-| Black Box Decisions | Explainable AI |
-| Expensive | Startup Friendly |
-| Limited Automation | Complete Hiring Workflow |
+| Keyword-Based Search | Semantic AI Analysis |
+| Manual Resume Review | Automated Resume Screening |
+| Candidate Score Only | Explainable AI Decisions |
+| Static Hiring Workflow | Intelligent Recruitment Workflow |
+| Enterprise-Focused | Startup-Friendly Platform |
+| Limited Automation | AI + Automation |
 
 ---
 
-# 📈 Future Scope
+# 📈 Future Roadmap
 
-- AI Video Interviews
-- Voice Analysis
-- LinkedIn Integration
-- Calendar Integration
-- HRMS Integration
-- Predictive Hiring Analytics
-- Mobile Application
-- Team Collaboration
+TalentOS is designed to evolve into a complete Recruitment Operating System.
 
----
+### Upcoming Features
 
-# 👨‍💻 Team Neural Ninjas
-
-| Member | Role |
-|----------|----------------------|
-| Kamal Solanki | Team Lead & Frontend |
-| Muskan Yeshmin Ali | Backend & Database |
-| Nirupama Singh | AI Development |
-| Krrish Yaduka | Automation |
-| Yash Agrawal | Documentation & Presentation |
+- 🎥 AI Video Interview Evaluation
+- 🎙️ Voice & Communication Analysis
+- 📅 Calendar Integration
+- 💼 LinkedIn Integration
+- 🏢 HRMS Integration
+- 🌍 Multi-language Resume Analysis
+- 📱 Android & iOS Application
+- 📊 Predictive Hiring Analytics
+- 🤝 Team Collaboration
+- 🔔 Real-time Notifications
 
 ---
 
-# ❤️ Contributing
+# 👨‍💻 Meet Team Neural Ninjas
 
-Contributions, ideas, and suggestions are welcome.
+TalentOS was developed collaboratively by **Team Neural Ninjas** during **BuildX'26 Hackathon**.
 
-Fork the repository
-
-Create your feature branch
-
-Commit your changes
-
-Open a Pull Request
+| Team Member | Responsibility |
+|--------------|----------------|
+| 👨‍💻 **Kamal Solanki** | Team Lead, Frontend Development, UI/UX Design, Project Integration |
+| 🗄️ **Muskan Yeshmin Ali** | Backend Development, Database Design, API Integration |
+| 🤖 **Nirupama Singh** | Artificial Intelligence, Candidate Scoring, Explainable AI |
+| ⚙️ **Krrish Yaduka** | Workflow Automation & Make.com Integration |
+| 📚 **Yash Agrawal** | Documentation, Research & Presentation |
 
 ---
 
-# 📜 License
+## 🤝 Team Collaboration
 
-This project was developed as part of **BuildX'26 Hackathon** for educational and demonstration purposes.
+TalentOS is the result of collaborative planning, development, testing, and continuous iteration.
+
+Every team member contributed significantly to transforming the initial idea into a fully functional AI-powered recruitment platform.
+
+---
+
+# 🏆 BuildX'26 Journey
+
+TalentOS was conceptualized, designed, developed, and deployed during **BuildX'26 Hackathon**.
+
+Throughout the journey, the team focused on solving real-world hiring challenges by integrating Artificial Intelligence, Explainable AI, automation, and modern web technologies into one seamless recruitment platform.
+
+---
+
+# ❤️ Acknowledgements
+
+We sincerely thank
+
+- BuildX'26 Organizers
+- Our Mentors
+- Google Gemini AI
+- Supabase
+- Next.js Community
+- Open Source Contributors
+
+for their continuous support, guidance, and inspiration throughout the development of TalentOS.
+
+---
+
+# 📄 License
+
+This project is developed for educational, research, and hackathon demonstration purposes.
+
+For commercial usage, appropriate permissions from the project contributors may be required.
 
 ---
 
 <div align="center">
 
-## ⭐ If you liked this project, give it a Star!
+## 🌟 Thank You for Visiting TalentOS
 
-Made with ❤️ by **Team Neural Ninjas**
+**If you like this project, don't forget to ⭐ Star the repository!**
+
+### Built with ❤️ by Team Neural Ninjas
+
+🚀 *Empowering Startups with Explainable AI Recruitment.*
 
 </div>
+
+---
+
+# 🤝 Contributing
+
+Contributions are always welcome!
+
+If you'd like to improve TalentOS, follow these steps:
+
+1. Fork the repository
+2. Create a new feature branch
+
+```bash
+git checkout -b feature/your-feature-name
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Add: Your feature description"
+```
+
+4. Push the branch
+
+```bash
+git push origin feature/your-feature-name
+```
+
+5. Open a Pull Request 🚀
+
+---
+
+# 🐛 Reporting Issues
+
+Found a bug or have a feature request?
+
+Please create an issue with:
+
+- Clear title
+- Expected behavior
+- Actual behavior
+- Steps to reproduce
+- Screenshots (if applicable)
+
+We appreciate every suggestion that helps improve TalentOS.
+
+---
+
+# 📌 Repository Information
+
+| Item | Details |
+|------|----------|
+| Project Name | TalentOS |
+| Category | AI Recruitment Platform |
+| Event | BuildX'26 Hackathon |
+| Team | Neural Ninjas |
+| Status | ✅ Active |
+| Version | v1.0 |
+| License | Educational / Hackathon Project |
+
+---
+
+# 💼 Business Vision
+
+TalentOS is more than a hackathon project.
+
+Our vision is to build an AI-powered recruitment operating system that enables startups and businesses to:
+
+- Hire faster
+- Reduce recruitment costs
+- Improve hiring quality
+- Build trust with Explainable AI
+- Automate repetitive hiring tasks
+- Make data-driven recruitment decisions
+
+---
+
+# 🌍 Impact
+
+TalentOS aims to create value for both recruiters and candidates.
+
+### For Recruiters
+
+- ⏱️ Reduce hiring time
+- 📈 Increase recruitment efficiency
+- 🤖 AI-assisted decision making
+- 💡 Transparent candidate evaluation
+
+### For Candidates
+
+- Fair resume evaluation
+- Reduced keyword bias
+- Better interview preparation
+- Improved hiring transparency
+
+---
+
+# 🔮 Vision
+
+We believe the future of recruitment is:
+
+- AI-Assisted
+- Explainable
+- Transparent
+- Automated
+- Human-Centric
+
+TalentOS is our step toward that future.
+
+---
+
+# 📚 Resources
+
+### Official Technologies
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Supabase
+- Google Gemini AI
+- Make.com
+- Vercel
+
+---
+
+# 🙌 Special Thanks
+
+A heartfelt thank you to:
+
+- BuildX'26 Organizers
+- Our Mentors
+- Judges
+- Google Gemini Team
+- Supabase
+- Next.js Community
+- Every Open Source Contributor
+
+Your tools, guidance, and support made this project possible.
+
+---
+
+# ⭐ Support the Project
+
+If you found this repository useful:
+
+- ⭐ Star this repository
+- 🍴 Fork the project
+- 📢 Share it with others
+- 💬 Give feedback
+- 🤝 Contribute
+
+Every contribution helps TalentOS grow.
+
+---
+
+<div align="center">
+
+# 🚀 TalentOS
+
+### AI Hiring Co-Pilot for Modern Startups
+
+---
+
+**Built with ❤️ by Team Neural Ninjas**
+
+### 🏆 BuildX'26 Hackathon Project
+
+Empowering startups with **Artificial Intelligence**, **Explainable AI**, and **Modern Recruitment Automation**.
+
+---
+
+### ⭐ Thank You for Visiting ⭐
+
+If you enjoyed exploring TalentOS, don't forget to **star this repository** and support our journey!
+
+**Happy Coding! 🚀**
+
+</div>
+---
+
+> **TalentOS isn't just another Applicant Tracking System — it's an AI-powered recruitment assistant built to help startups hire the right talent faster, smarter, and with complete transparency.**
